@@ -11,7 +11,7 @@ for line in sys.stdin:
     if previousKey and (currentKey != previousKey):
         print "{0}\t{1}".format(previousKey, currentTotal)
         currentTotal=0
-    else:
-        currentTotal += float(currentValue)
 
+
+    currentTotal += float(currentValue)
     previousKey=currentKey    
