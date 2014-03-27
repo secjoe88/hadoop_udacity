@@ -9,7 +9,7 @@ for line in sys.stdin:
     [currentKey, currentValue]=line.strip().split('\t')
 
     if previousKey and (currentKey != previousKey):
-        print "{0}\t{1}".format(currentKey, currentTotal)
+        print "{0}\t{1}".format(previousKey, currentTotal)
         currentTotal=0
     else:
         currentTotal += float(currentValue)
