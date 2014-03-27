@@ -1,4 +1,4 @@
-        #!/usr/bin/python2
+#!/usr/bin/python2
 
 ## Mapper for mapreduce jobs on countrywide purchase data
 import sys
