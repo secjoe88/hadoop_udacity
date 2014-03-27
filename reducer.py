@@ -14,4 +14,7 @@ for line in sys.stdin:
 
 
     currentTotal += float(currentValue)
-    previousKey=currentKey    
+    previousKey=currentKey
+
+
+print "{0}\t{1}".format(previousKey, currentTotal)
