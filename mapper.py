@@ -11,6 +11,7 @@ parser.add_argument("-c", "--city", help="Return the city as part of the Key/Val
 parser.add_argument("-p", "--product", help="Return the product_category as part of the Key/Value pair", action="store_true")
 parser.add_argument("-s", "--cost", help="Return the cost as part of the Key/Value pair", action="store_true")
 parser.add_argument("-m", "--method", help="Return the payment method as part of the Key/Value pair", action="store_true")
+##mapper accepts exactly two parameters
 if len(sys.argv)!=3:
         parser.print_help()
         sys.exit()
