@@ -16,7 +16,7 @@ parser.add_argument("-q", help="Return the request's query strings part of the K
 parser.add_argument("-p", help="Return the request's protocol as part of the Key/Value pair", action="store_true")
 parser.add_argument("-c", help="Return the status code of the request as part of the Key/Value pair", action="store_true")
 parser.add_argument("-s", help="Return the requested object's size as part of the Key/Value pair", action="store_true")
-parser.add_argument("-1", help="Return the integer 1 as part of the Key/Value pair (must be second option", action="store_true")
+parser.add_argument("-1", help="Return the integer 1 as part of the Key/Value pair (must be second option)", action="store_true")
 ##mapper accepts exactly two parameters
 if len(sys.argv)!=3:
         parser.print_help()
