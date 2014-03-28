@@ -13,7 +13,7 @@ for line in sys.stdin:
         print "{0}\t{1}".format(previousKey, currentMax)
         currentMax=0
 
-    if currentValue > currentMax:
+    if float(currentValue) > float(currentMax):
         currentMax=currentValue
     previousKey=currentKey
 
