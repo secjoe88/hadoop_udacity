@@ -18,4 +18,4 @@ for line in sys.stdin:
     previousKey=currentKey
 
 
-print "{0}\t{1}".format(previousKey, currentTotal)
+print "{0}\t{1}".format(previousKey, totInstances)
