@@ -15,6 +15,7 @@ for line in sys.stdin:
         if currentInstances>maxInstances:
             maxInstances=currentInstances
             maxKey=previousKey
+        currentInstances=0
 
 
     currentInstances += 1
