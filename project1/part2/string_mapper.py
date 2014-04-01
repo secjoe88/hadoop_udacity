@@ -16,10 +16,11 @@ if len(sys.argv)!=2:
 else:
     pattern=re.compile(sys.argv[1])
 
+print "{0}\t1".format(sys.argv[1])
 ##Parse inputed lines using regex
-for line in sys.stdin:
-    ##check if line matches regex
-    match=pattern.search(line)
-    ##If so print the portion of the line that matches the regex
-    if match:
-        print "{0}\t1".format(match.string[match.start():match.end()])
+##for line in sys.stdin:
+##    ##check if line matches regex
+##    match=pattern.search(line)
+##    ##If so print the portion of the line that matches the regex
+##    if match:
+##        print "{0}\t1".format(match.string[match.start():match.end()])
