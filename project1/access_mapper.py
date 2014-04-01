@@ -33,8 +33,10 @@ for line in sys.stdin:
                 if l !="" and l!=" ":
                         data.append(l)
 
-        
-        [ip, identity, username, time, query, status, size] = data
+        if len(data)==7:
+                [ip, identity, username, time, query, status, size] = data
+        else:
+                print "error\t1"
         
         ##Discern desired Key for Key/Value pair
         if sys.argv[1]=="-ip":
