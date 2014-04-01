@@ -12,7 +12,7 @@ for line in sys.stdin:
     [currentKey, currentValue]=line.strip().split('\t')
 
     if previousKey and (currentKey != previousKey):
-        if currentInstances>maxInstances
+        if currentInstances>maxInstances:
             maxInstances=currentInstances
             maxKey=previousKey
 
