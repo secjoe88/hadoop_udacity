@@ -12,7 +12,8 @@ pattern=re.compile("(/(.+))*/(.+)\.(.+) ")
 for line in sys.stdin:
     query=re.search("\".+\"", line)
     ##check if line matches regex
-    match=pattern.search(query.string[query.start():query.end()])
+    if query:
+        match=pattern.search(query.string[query.start():query.end()])
     ##If so print the portion of the line that matches the regex
     if match:
         print "{0}\t1".format(match.string[match.start():match.end()])
