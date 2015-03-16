@@ -2,28 +2,29 @@
 
 import sys
 
-index={}
+
+prevkey='';curkey='';instances=0;posts=[]
 for line in sys.stdin:
-    key,id=line.split('\t');id=int(id);
+    curkey,id=line.split('\t');id=int(id);
+    if not instances: prevkey=curkey
     
-    if key not in index:
-        #if the current word isn't in the index yet, add it to the index, note that there is now 1 instance of it
-        #and note the post id that this instance takes place in
-        index[key]={}; index[key]['instances']=1; index[key]['posts']=[id]
-    else:
-        #if current word already exist in the index, increment the number of instances of the word
-        index[key]['instances']+=1
-        if id not in index[key]['posts']:
-            #and if the post id of this instance of word isn't in the post id list of this word in the index, add the 
-            #current post id to this word's index entry
-            index[key]['posts'].append(id)
-            
-for key in index:
-    #print index entries
-    print "%(key)s(%(instances)d)  %(posts)s"%{
-        'key':key,
-        'instances':index[key]['instances'],
-        'posts':str(sorted(index[key]['posts']))[1:-1]
+    if curkey==prevkey: #if key on current line is the same as key on previous line
+        #increment instance counter
+        instances+=1;
+        #and track current post id if it isn't already in the list for this key
+        if id not in posts: posts.append(id)
+        
+    else: #if key on current line is different from previous line
+        #print index entry for key on previous line
+        print "%(key)s(%(instances)d)  %(posts)s"%{
+        'key':prevkey,
+        'instances':instances,
+        'posts':str(sorted(posts))[1:-1]
         }
-    
+        #reset instance counter to 1
+        instances=1
+        #reset post id list to only include current id
+        posts=[id]
+    #set previous key to current key
+    prevkey=curkey
     
