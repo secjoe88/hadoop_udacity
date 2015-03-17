@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 import sys
 import csv
 from datetime import datetime
