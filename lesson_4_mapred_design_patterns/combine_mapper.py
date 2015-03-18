@@ -3,8 +3,8 @@ import csv
 import sys
 
 
-forum_node=open('c:\\users\\jojo\desktop\\nodes_short.tsv', 'r')
-forum_users=open('c:\\users\\jojo\\desktop\\forum_users.tsv','r')
+forum_node=open('/usr/hduser/input/forum_node.tsv', 'r')
+forum_users=open('/user/hduser/input/forum_users.tsv','r')
 
 node_reader=csv.reader(forum_node, delimiter='\t')
 users_reader=csv.reader(forum_users, delimiter='\t')
