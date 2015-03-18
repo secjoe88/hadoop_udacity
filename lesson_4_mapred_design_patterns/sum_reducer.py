@@ -11,6 +11,7 @@ for line in reader:
     curkey, cursale=line
     cursale=float(cursale)
     prevkey=curkey if prevkey==None else prevkey
+    
     if curkey==prevkey:
         #if key on current line is same as key on previous line (they are same day of the week)
         #add cursale to the total for the current day of the week and increment the number of sales
@@ -19,12 +20,10 @@ for line in reader:
         count+=1
     else:
         #otherwise print sum of sales for that weekday and reset totalsales and counter
-        
         print '%s\t%.2f'%(prevkey,totalsales)
         totalsales=cursale;
         count=1;
         
-    
     prevkey=curkey
         
 #print final solution
