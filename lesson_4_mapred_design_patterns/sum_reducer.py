@@ -8,8 +8,8 @@ reader=csv.reader(sys.stdin, delimiter='\t')
 
 for line in reader:
     #read in key value pair from stdin
-    curkey, cursale=line;
-    cursale=float(cursale);
+    curkey, cursale=line
+    cursale=float(cursale)
     prevkey=curkey if prevkey==None else prevkey
     if curkey==prevkey:
         #if key on current line is same as key on previous line (they are same day of the week)
@@ -18,9 +18,9 @@ for line in reader:
         totalsales+=cursale
         count+=1
     else:
-        #otherwise print mean sale for that weekday and reset totalsales and counter
+        #otherwise print sum of sales for that weekday and reset totalsales and counter
         
-        print '%s\t%f'%(curkey,totalsales/count)
+        print '%s\t%.2f'%(curkey,totalsales)
         totalsales=cursale;
         count=1;
         
@@ -28,5 +28,5 @@ for line in reader:
     prevkey=curkey
         
 #print final solution
-print '%s\t%f'%(curkey,totalsales/count)
+print '%s\t%.2f'%(curkey,totalsales)
     
