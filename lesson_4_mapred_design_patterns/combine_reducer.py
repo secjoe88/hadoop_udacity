@@ -10,7 +10,7 @@ for line in reader:
     
     if line[1]=='a': #if line is a user identifier
         #store pertinent fields for current user [reputation, gold, silver, bronze]
-        additional_info=line[2:]
+        additional_info=[line[2:]]
     else: #presumably, line is a post attributed to the currently stored user info
         #fist we extract the pertinent post info in the correct order
         post_info=[line[i] for i in [2,3,4,0,5,6,7,8,9]]
