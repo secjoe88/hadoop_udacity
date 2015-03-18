@@ -20,7 +20,7 @@ for line in reader:
     else:
         #otherwise print sum of sales for that weekday and reset totalsales and counter
         
-        print '%s\t%.2f'%(curkey,totalsales)
+        print '%s\t%.2f'%(prevkey,totalsales)
         totalsales=cursale;
         count=1;
         
@@ -28,5 +28,5 @@ for line in reader:
     prevkey=curkey
         
 #print final solution
-print '%s\t%.2f'%(curkey,totalsales)
+print '%s\t%.2f'%(prevkey,totalsales)
     
