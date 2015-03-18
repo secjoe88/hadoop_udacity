@@ -1,4 +1,5 @@
 #!/usr/bin/python2
+
 import csv
 import sys
 
@@ -15,6 +16,7 @@ for line in reader:
         key,value=[line[0]],line[1:]
         #print user id, user keywork identifier (a), and remaining user information
         writer.writerow(key+['a']+value)
+    
     else: #forum post information line
         #store desired data from forum post 
         #with format key=[author_id], value=[id, title, tagnames, node_type, parentid, abs_parent_id, added_at, score]
